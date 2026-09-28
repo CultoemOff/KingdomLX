@@ -1,0 +1,1 @@
+export class GamepadService{frame=0;start(axis:(x:number,y:number)=>void,status:(s:string)=>void){const loop=()=>{const p=navigator.getGamepads?.()[0];if(p){const d=.12,x=Math.abs(p.axes[0]??0)>d?p.axes[0]:0,y=Math.abs(p.axes[1]??0)>d?p.axes[1]:0;axis(x,y);status(p.id)}this.frame=requestAnimationFrame(loop)};loop()}stop(){cancelAnimationFrame(this.frame)}}
