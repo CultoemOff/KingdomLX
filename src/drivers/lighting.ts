@@ -1,0 +1,1 @@
+export interface LightingDriver{connect():Promise<void>;scene(id:string):Promise<void>;color(id:string):Promise<void>;movement(id:string):Promise<void>;effect(id:string,on:boolean):Promise<void>;intensity(value:number):Promise<void>;blackout(on:boolean):Promise<void>;panTilt(pan:number,tilt:number):Promise<void>}
